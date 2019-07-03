@@ -1,8 +1,12 @@
 jobs:
   build:
+    docker:
+      - image: buildpack-deps:trusty
     steps:
       - run: echo "build"
   test1:
+    docker:
+      - image: buildpack-deps:trusty
     steps:
       - run: echo "test1"
 workflows:
