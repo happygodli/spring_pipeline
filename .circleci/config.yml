@@ -1,3 +1,10 @@
+jobs:
+  build:
+    steps:
+      - run: echo "build"
+  test1:
+    steps:
+      - run: echo "test1"
 workflows:
   version: 2
   build-test-and-deploy:
