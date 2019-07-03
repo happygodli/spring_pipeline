@@ -9,6 +9,21 @@ jobs:
       - image: buildpack-deps:trusty
     steps:
       - run: echo "test1"
+  test2:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - run: echo "test2"
+  test3:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - run: echo "test3"
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - run: echo "deploy"
 
 workflows:
   version: 2
@@ -19,6 +34,9 @@ workflows:
           requires:
             - build
       - test2:
+          requires:
+            - test1
+      - test3:
           requires:
             - test1
       - deploy:
